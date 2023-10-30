@@ -1,0 +1,411 @@
+:root {
+  --border: hsl(249, 99%, 64%), hsl(278, 94%, 30%);/*#6448fe, #180594*/
+  --inputerrors: hsl(0, 100%, 66%);
+
+  --White: hsl(0, 0%, 100%);
+  --Light: hsl(270, 3%, 87%);
+  --violet: hsl(279, 6%, 55%);
+  --Verydarkviolet: hsl(278, 68%, 11%);
+
+  --Fontsize: 18px;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: var(--Fontsize);
+}
+
+
+img {
+  
+    display: block;
+    
+
+}
+
+/* WHEN USING POSTIONING & REPEATING THE SAME NUMBER YOU 
+CAN USE A SELECTOR-LOCALLY SCOPED CUSTOM PROPERTY*/
+
+/*.FRONT-CARD {
+    --card-padding: 1.5rem; } this way i can change multiple 
+    lines of code by just changing it here.
+     */
+.cards {
+    position: relative;
+    height: 15rem;
+    background-image: url('images/bg-main-mobile.png');
+    
+}
+
+.front-card {
+    z-index: 2;
+    top: 50%;
+    right: 22%;
+}
+
+.back-card {
+    right: 2rem;
+    top: 2rem;
+}
+
+.front-card,
+ .back-card {            
+    position: ABSOLUTE;   /*THIS IS WHAT KEEPS EVERYTHING POSITIONED TOGETHER -CHANGED TO ABSOLUTE FROM RELATIVE */
+    width: min-content;
+    background-color: hsl(278, 68%, 11%);
+}
+
+
+.front-card > *:not(.card-front),
+.back-card > *:not(.card-back) {
+    position: absolute;
+}
+
+/*-card images-
+
+.card-front,
+.card-back {
+    max-width: revert;
+}*/
+
+.card-logo {
+    top: 1rem;
+    left: 2rem;
+}
+
+.acct-number {
+    color: var(--White);
+    font-size: 1.10rem;
+    top: 48%;
+    left: 2rem;
+    letter-spacing: .1rem;
+
+}
+
+.acct-holder {
+    color: white;
+    bottom: 1.5rem;
+    left: 2rem;
+
+}
+
+.date {
+    color: white;
+    right: 2rem;
+    bottom: 1.5rem;
+}
+
+.triple-zero {
+    color: white;
+    right: 2.2rem;
+    top: 41%;
+}
+
+
+
+/* FORM SECTION */
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    height: 20em;
+    width: 23.6em;
+    background-color: var(--White);
+   
+}
+
+.right-side {
+    margin-top: 3rem;
+}
+
+.card-holder {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+    padding-top: em; 
+}
+
+label {
+    margin-top: 2em;
+    margin-left: 0.3rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: var(--Verydarkviolet);
+}
+
+input[type="text"]{
+    display: block;
+    margin-left: auto;
+    margin-right: 6em;
+    margin-top: 0.6em;
+    width: 23em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 2px solid hsl(270, 3%, 87%);
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=text]:focus {
+    border: 1.3px solid #6448fe;
+  }
+
+input[type=text]:focus {
+    border: 1px solid  linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    
+}
+
+::placeholder {
+    color: var(--violet);
+}
+
+/*NUMBER SECTION*/
+
+.card-number {
+    margin-top: 0.3em;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2em;
+}
+
+input[type="number"]{
+    display: block;
+    margin-left: auto;
+    margin-right: 6em;
+    margin-top: 0.6em;
+    width: 23em;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid hsl(270, 3%, 87%);
+    
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.expiration {
+   display: flex;
+   flex-direction: row;
+    margin-top: 1em;
+}
+
+
+.exp-date {
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6em;
+    margin-top: 2em;
+    margin-left: 2.8em;
+}
+
+.exp-month {
+    margin-top: 0.5em;
+    margin-left: 3em;
+    width: 5em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+
+.exp-year {
+  
+    width: 5em;
+    margin-left: 1.5em;
+    margin-top: -18.3em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+
+
+
+.security-cvc {
+    margin-top: 0.5em;
+    margin-right: 6em;
+    width: 8em;
+    padding: 0.4em;
+    border-radius: 4px;
+    border: 1px solid hsl(270, 3%, 87%);
+}
+
+
+.conf-btn {
+    margin-top: 2.5em;
+    margin-left: -2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.firmbtn {
+    width: 23.4em;
+    padding: 1em;
+    background-color: var(--Verydarkviolet);
+    color: var(--Light);
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+/*ERROR STATES*/
+
+.name-error {
+    font-size: 0.5em;
+    margin-left: 0.5em;
+    color: var(--inputerrors);
+    padding-top: 0.5em;
+}
+
+
+.number-error {
+    font-size: 0.5em;
+    margin-left: 0.5em;
+    color: var(--inputerrors);
+    padding-top: 0.5em;
+}
+
+.error2 {
+    font-size: 0.6em;
+    margin-left: 3.5em;
+    color: var(--inputerrors);
+    padding-top: 0.5em;
+}
+
+.error-blank {
+ 
+    color: var(--inputerrors);
+    padding-top: 0.5em;
+    font-size: 0.6em;
+}
+
+/*ADDED DETAILS CARD*/
+
+.thanks {
+    margin-top: 10em;
+    background-color: var(--White);
+    height: 25em;
+    width: 20.8em;
+    margin: auto;
+    display: none;
+}
+
+.check-mark {
+    text-align: center;
+    padding-top: 6em;
+    margin-left: 40%;
+}
+
+h1{
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.details {
+    margin-top: 1em;
+    text-align: center;
+    color: var(--violet);
+}
+
+.bbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    
+}
+
+.cont-btn {
+    width: 15em;
+    padding: 0.8em;
+    background-color: var(--Verydarkviolet);
+    color: var(--violet);
+    font-weight: 500;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+    
+@media (min-width: 768px){
+
+  
+    .container {
+        display: flex;  
+    }
+
+    .cards {
+        position: absolute;
+        background-image: url('images/bg-main-desktop.png');
+        background-position: left;
+        width: 25rem;
+        height: 100%;
+    }
+
+    .front-card {
+        top: 10rem;
+        left: 12rem;
+        font-size: 12px;
+    }
+
+    .back-card {
+        top: 22rem;
+        left: 15rem;
+        font-size: 12px;
+    }
+
+    .triple-zero {
+        margin-top: 0.3rem;
+    }
+
+    .form {
+        margin-left: 50%;
+        margin-top: 8rem;
+       
+    }
+
+    label {
+        margin-left: 0.5rem;
+    }
+
+    .card-number {
+        margin-top: -0.2rem;
+    }
+
+    .exp-date {
+        margin-left: 2.5rem;
+    }
+
+    .conf-btn {
+        margin-left: -2rem;
+        margin-top: 1rem;
+    }
+
+    .thanks {
+       
+        margin-left: 50%;
+        margin-top: 5rem;
+    }
+
+}
+    
+
+
+
+.attribution {
+    margin-top: 20em;
+}
